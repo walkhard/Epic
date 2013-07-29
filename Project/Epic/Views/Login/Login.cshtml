@@ -1,0 +1,28 @@
+@{
+    Layout = "_layoutAdmin.cshtml";
+}
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+<form action="/login" method="POST" class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputLogin">Login</label>
+    <div class="controls">
+      <input type="text" id="inputLogin" placeholder="Login" name="Username">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+      <input type="password" id="inputPassword" placeholder="Password" name="Password">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" name="RememberMe" /> Remember me
+      </label>
+      <button type="submit" class="btn">Sign in</button>
+    </div>
+  </div>
+</form>

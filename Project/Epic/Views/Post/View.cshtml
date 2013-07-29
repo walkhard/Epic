@@ -1,0 +1,16 @@
+@{
+    Layout = "_layout.cshtml";
+}
+<hr />
+<div class="row">
+    <div class="span12">
+        @if (Html.RenderContext.Context.CurrentUser != null)
+        {
+        <small><a href="/admin/posts/@Model.Id/edit" class="btn btn-primary">Edit post</a></small>
+        <form method="post" action="/admin/posts/delete"><input type="hidden" value="@Model.Id" name="id" /><input type="submit" class="btn btn-danger" value="Delete post" onclick="return confirm('Are you sure?');" /></form>
+        }
+        <h2>@Model.Title</h2>
+        <h3><small>@Model.Created.ToString("MMMM d, yyyy", System.Globalization.CultureInfo.InvariantCulture)</small>       </h3>
+    </div>
+    <div class="span12">@Html.Raw(Model.ContentHtml)</div>
+</div>

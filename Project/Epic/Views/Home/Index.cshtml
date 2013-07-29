@@ -1,0 +1,20 @@
+@{
+    Layout = "_layout.cshtml";
+}
+@using System.Linq
+@if((Model as System.Collections.Generic.IEnumerable<Epic.Models.Post>).Any())
+{
+    <table class="table">
+    @foreach(var m in Model)
+    {
+    <tr>
+        <td><a href="/posts/@m.Slug">@m.Title</a></td>
+        <td class="text-right">@m.Created.ToString("MMMM d, yyyy", System.Globalization.CultureInfo.InvariantCulture)</td>
+    </tr>
+    }
+    </table>
+}
+else
+{
+    <div>No posts</div>
+}

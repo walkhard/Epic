@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D475C395-9D5C-42BD-93F0-62C06BED4F4D}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Epic</RootNamespace>
+    <AssemblyName>Epic</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.0.18.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Aspnet">
+      <HintPath>..\packages\Nancy.Hosting.Aspnet.0.18.0\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor.Unofficial">
+      <HintPath>..\packages\System.Web.Razor.Unofficial.2.0.2\lib\net40\System.Web.Razor.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor">
+      <HintPath>..\packages\Nancy.Viewengines.Razor.0.18.0\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>..\packages\Nancy.Authentication.Forms.0.18.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.4.0.0.1\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Validation.FluentValidation">
+      <HintPath>..\packages\Nancy.Validation.FluentValidation.0.18.0\lib\net40\Nancy.Validation.FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.SqlServerCe.Entity">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.4.3.6\lib\net40\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net">
+      <HintPath>..\packages\BCrypt-Official.0.1.107\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Dynamic" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="web.config" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\epiceditor\images\edit.png" />
+    <Content Include="Content\epiceditor\images\fullscreen.png" />
+    <Content Include="Content\epiceditor\images\preview.png" />
+    <Content Include="Content\epiceditor\js\epiceditor.js" />
+    <Content Include="Content\epiceditor\js\epiceditor.min.js" />
+    <Content Include="Content\epiceditor\themes\base\epiceditor.css" />
+    <Content Include="Content\epiceditor\themes\editor\epic-dark.css" />
+    <Content Include="Content\epiceditor\themes\editor\epic-light.css" />
+    <Content Include="Content\epiceditor\themes\preview\bartik.css" />
+    <Content Include="Content\epiceditor\themes\preview\github.css" />
+    <Content Include="Content\epiceditor\themes\preview\preview-dark.css" />
+    <Content Include="Content\Scripts\bootstrap.js" />
+    <Content Include="Content\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Scripts\jquery-2.0.3-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery-2.0.3.js" />
+    <Content Include="Content\Scripts\jquery-2.0.3.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\_layout.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\_partialNavbar.cshtml" />
+    <None Include="Views\_layoutAdmin.cshtml" />
+    <None Include="Views\Login\Login.cshtml" />
+    <None Include="Views\_partialAlerts.cshtml" />
+    <None Include="Views\Admin\Post\Add.cshtml" />
+    <None Include="Views\Admin\Password.cshtml" />
+    <None Include="Views\Admin\Settings.cshtml" />
+    <None Include="Content\Scripts\jquery-2.0.3.min.map" />
+    <None Include="Views\Post\View.cshtml" />
+    <None Include="Views\Admin\Post\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\" />
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Database\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\Validators\" />
+    <Folder Include="ViewModels\Validators\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Post\" />
+    <Folder Include="Views\Admin\Post\" />
+    <Folder Include="Content\epiceditor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modules\HomeModule.cs" />
+    <Compile Include="Database\IEpicDatabase.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Database\EpicDatabase.cs" />
+    <Compile Include="Database\EpicDatabaseInitializer.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\ISettingsService.cs" />
+    <Compile Include="Models\EpicSettings.cs" />
+    <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="EpicBootstrapper.cs" />
+    <Compile Include="Services\UserMapper.cs" />
+    <Compile Include="Models\UserIdentity.cs" />
+    <Compile Include="Modules\LoginModule.cs" />
+    <Compile Include="Modules\PostModule.cs" />
+    <Compile Include="Modules\AdminModule.cs" />
+    <Compile Include="Extensions\ModelValidationResultExtensions.cs" />
+    <Compile Include="ViewModels\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Models\Validators\PostValidator.cs" />
+    <Compile Include="ViewModels\Validators\ChangePasswordValidator.cs" />
+    <Compile Include="Extensions\NancyModuleExtensions.cs" />
+    <Compile Include="Extensions\HtmlHelpersExtensions.cs" />
+    <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\User.cs" />
+  </ItemGroup>
+</Project>

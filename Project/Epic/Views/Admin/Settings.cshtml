@@ -1,0 +1,32 @@
+@{
+    Layout = "_layoutAdmin.cshtml";
+}
+
+@using Epic
+@using Epic.Extensions
+@using Epic.ViewModels
+@model SettingsViewModel
+<div class="page-header">
+    <h1>Change system settings</h1>
+</div>
+<form action="/admin/settings" method="post" class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputTitle">Title</label>
+    <div class="controls">
+      <input type="text" id="inputTitle" placeholder="Title" name="Title" value="@Model.Title" />
+      @Html.ValidationMessageFor(i => i.Title)
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputMetaTitle">MetaTitle</label>
+    <div class="controls">
+      <input type="text" id="inputMetaTitle" placeholder="MetaTitle" name="MetaTitle" value="@Model.MetaTitle"  />
+      @Html.ValidationMessageFor(i => i.MetaTitle)
+    </div>
+  </div>
+  <div class="control-group">
+      <label class="control-label"></label>
+      <button type="submit" class="btn">Save</button>
+    </div>
+  </div>
+</form>

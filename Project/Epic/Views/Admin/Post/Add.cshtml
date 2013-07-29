@@ -1,0 +1,74 @@
+@{
+    Layout = "_layoutAdmin.cshtml";
+}
+<div class="page-header">
+    <h1>Add post</h1>
+</div>
+<div id="form">
+<label for="title">Title</label>
+<input type="text" style="backgorund:#292929;width:50%;" value="" name="title" />
+<div id="title-error"></div>
+<label for="slug">Slug</label>
+<input type="text" style="backgorund:#292929;width:50%;" value="" name="slug" />
+<div id="slug-error"></div>
+<div id="epiceditor" style="min-height:450px;"></div>
+</div>
+
+<script src="@Url.Content("/Content/epiceditor/js/epiceditor.min.js")"></script>
+<script type="text/javascript">
+    window.postId = null;
+    window.savingPost = null;
+    var opts = {
+      basePath: '/Content/epiceditor',
+      clientSideStorage: false,
+      file: { autoSave: 1000 }
+    };
+    
+    var editor = new EpicEditor(opts);
+    editor.load();
+
+    editor.edit();
+    
+    editor.on('autosave', function () {
+        if (window.savingPost == null)
+        {
+            var title = $.trim($('input[name="title"]').val());
+            var slug = $.trim($('input[name="slug"]').val());
+        
+            var postData = {
+                Id: window.postId,
+                Content: editor.getElement('editor').body.innerText,
+                Title: title,
+                Slug: slug
+            };
+            var post = $.post('/admin/posts/edit', postData);
+            window.savingPost = post;
+                
+            window.savingPost.done(function (data) {
+                $('[id$="-error"]').html('');
+                if(data.Errors) {
+                    $.each(data.Errors, function (error) {
+                        var container = $('#' + error.toLowerCase() + '-error');
+                        var errorsHtml = '<ul>';
+                        $.each(data.Errors[error], function (index, message) {
+                            errorsHtml += '<li>' + message + '</li>';
+                        });
+                        errorsHtml += '</ul>';
+                        container.html(errorsHtml);
+                    });
+                } else {
+                    window.postId = data.Id;
+                }
+
+                window.savingPost = null;
+            });
+        }
+    });
+    
+    $(function() {
+        $('#form').on('keyup change', 'input', function() {
+            editor.emit('autosave');
+        });
+    });
+
+</script>
