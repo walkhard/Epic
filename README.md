@@ -11,7 +11,7 @@ This blog was created primarily for learning purposes. Hopefully someone will fi
 
 * Based on [Nancy framework](https://github.com/NancyFx/Nancy)
 * Using [Twitter Bootstrap](https://github.com/twbs/bootstrap) for UI 
-* MarkDown powered posts using [MarkDownSharp](https://code.google.com/p/markdownsharp/) and (EpicEditor)[https://github.com/OscarGodson/EpicEditor] (post are automatically saved)
+* MarkDown powered posts using [MarkDownSharp](https://code.google.com/p/markdownsharp/) and [EpicEditor](https://github.com/OscarGodson/EpicEditor) (post are automatically saved)
 * [FluentValidation](http://fluentvalidation.codeplex.com/)
 * Database interaction using [EntityFramework](http://entityframework.codeplex.com/) (code first approach)
 
